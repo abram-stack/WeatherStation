@@ -9,10 +9,12 @@ const writeDataToInflux = (locationObject) => {
       {
         measurement: 'temperature',
         tags: {
-          unit: locationObject.rawtemp.tempInfo[0].units,
-          location: locationObject.rawtemp.tempInfo[0].location
+          unit: locationObject.rawtemp.tempInfo[0].units, //is a need because, front end need to render unit
+          location: locationObject.rawtemp.tempInfo[0].location //messstationid
+          // sensorId eg.201
+          // messstation id
           },
-        fields: { temperature: tempPoint.temp },
+        fields: { temperature: tempPoint.temp },//data,
         timestamp: tempPoint.epoch
       }
     ], { database: 'aussenklima', precision: 's' })

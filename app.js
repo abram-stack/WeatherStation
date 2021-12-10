@@ -1,6 +1,7 @@
 const express = require('express');
 const client = require('./dbClient');
 const locA = require('./data/temp_locA');
+const locB = require('./data/temp_locB');
 const temperature = require('./routes/temperature');
 const {writeTemperature} = require('./model/Temperature');
 
@@ -22,7 +23,7 @@ client.getDatabaseNames()
       console.log(`running on server ${port}...`);
     });
     // we can write into database here:
-    //writeTemperature(locA);
+    // writeTemperature(locB);
   })
   .catch(error => console.log({ error }));
 

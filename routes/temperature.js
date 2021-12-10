@@ -15,4 +15,16 @@ router.get('/:location', (req, res) => {
     .then(result => res.status(200).json(result))
     .catch(error => res.status(500).json({ error }));
 })
+
+router.get('/:location/:functions', async(req, res) => {
+  const { location, functions } = req.params;
+  try {
+    if (functions == 'mean') { 
+      const result = await client.query(`select mean(temperature) from temperature where location = '${location}'`);
+      res.status(200).send(result);
+    }
+  } catch (error) {
+    res.status(500).json({ error });
+  }
+})
 module.exports = router;

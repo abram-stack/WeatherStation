@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "influx": "^5.9.2"
+    "influx": "^5.9.2",
+    "lodash": "^4.17.21"
   }
 }
