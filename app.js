@@ -2,8 +2,13 @@ const express = require('express');
 const client = require('./dbClient');
 const locA = require('./data/temp_locA');
 const locB = require('./data/temp_locB');
+const station0 = require('./data/humid_st0');
+const station1 = require('./data/humid_st1');
 const temperature = require('./routes/temperature');
-const {writeTemperature} = require('./model/Temperature');
+const humidity = require('./routes/humidity');
+
+const { writeTemperature } = require('./model/Temperature');
+const { writeHumidity } = require('./model/Humidity');
 
 const app = express();
 
@@ -31,7 +36,10 @@ client.getDatabaseNames()
     });
     // we can write into database here:
     // writeTemperature(locB);
+    //writeHumidity(station0);
+    //writeHumidity(station1);
   })
   .catch(error => console.log({ error }));
 
 app.use('/api/temperature', temperature);
+app.use('/api/humidity', humidity);

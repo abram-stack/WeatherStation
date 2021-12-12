@@ -14,8 +14,8 @@ const writeDataToInflux = (locationObject) => {
           sensor: locationObject.rawData.dataInfo[0].sensor, // sensorId eg.201
           station: locationObject.rawData.dataInfo[0].station //messstationid
           },
-        fields: { dataPoint: data.temp },//data,
-        timestamp: tempPoint.epoch
+        fields: { data: dataPoint.data },//data,
+        timestamp: dataPoint.epoch
       }
     ], { database: 'aussenklima', precision: 's' })
       .catch(error => {
@@ -23,4 +23,5 @@ const writeDataToInflux = (locationObject) => {
     })
   });
 }
-module.exports.writeTemperature = writeDataToInflux;
+
+module.exports.writeHumidity = writeDataToInflux;

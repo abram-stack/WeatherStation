@@ -16,87 +16,106 @@ module.exports = {
     "rawDataObs": [
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45, 55, true)
             },
             {
                "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(45,55)
+                "data": _.random(45,55, true)
+                
             },
             {
                "epoch": new Date(_.random(startTs, endTs)),
-              "data": _.random(45,55)
+                "data": _.random(45,55, true)
+              
     }
   ]}
 }
