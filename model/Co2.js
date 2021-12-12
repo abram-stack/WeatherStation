@@ -1,6 +1,6 @@
 // Model for measurement : humidity 
 const client = require('../dbClient');
-const debug = require('debug')('app::dbinsert')
+const debug = require('debug')('app:dbinsert')
 
 // // function to write to humidity, using dummy data
 const writeDataToInflux = (locationObject) => {
@@ -9,7 +9,7 @@ const writeDataToInflux = (locationObject) => {
     // line protocol convention
     client.writePoints([
       {
-        measurement: 'humidity',
+        measurement: 'co2',
         tags: {
           units: locationObject.rawData.dataInfo[0].units, //talked to frontend dev, units is needed to render to client
           sensor: locationObject.rawData.dataInfo[0].sensor, // sensorId eg.201
@@ -19,11 +19,13 @@ const writeDataToInflux = (locationObject) => {
         timestamp: dataPoint.epoch
       }
     ], { database: 'aussenklima', precision: 's' })
-      .then(result => debug('Insert Ok'))
+      .then(() => {
+        debug('Insert Database OK');
+      })
       .catch(error => {
       debug(`Error saving data into Influx ${error}`)
     })
   });
 }
 
-module.exports.writeHumidity = writeDataToInflux;
+module.exports.writeCo2 = writeDataToInflux;
