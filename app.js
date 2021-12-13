@@ -13,10 +13,12 @@ const pressStation0 = require('./data/pressure_st0');
 const temperature = require('./routes/temperature');
 const humidity = require('./routes/humidity');
 const co2 = require('./routes/co2');
+const pressure = require('./routes/pressure');
 
 const { writeTemperature } = require('./model/Temperature');
 const { writeHumidity } = require('./model/Humidity');
 const { writeCo2 } = require('./model/Co2');
+const { writePressure } = require('./model/Pressure');
 
 const app = express();
 
@@ -44,3 +46,4 @@ client.getDatabaseNames()
 app.use('/api/temperature', temperature);
 app.use('/api/humidity', humidity);
 app.use('/api/co2', co2);
+app.use('/api/pressure', pressure);
