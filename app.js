@@ -8,6 +8,7 @@ const humidStation0 = require('./data/humid_st0');
 const humidStation1 = require('./data/humid_st1');  
 const co2Station0 = require('./data/co2_st0');
 const co2Station1 = require('./data/co2_st1');
+const pressStation0 = require('./data/pressure_st0');
 
 const temperature = require('./routes/temperature');
 const humidity = require('./routes/humidity');
