@@ -40,8 +40,8 @@ client.getDatabaseNames()
       debug(`running on server ${port}...`);
     });
     // write dummy data  database here:
-    // writeTemperature(tempStation0);
-    // writeTemperature(tempStation1);
+    writeCo2(co2Station0);
+    writeCo2(co2Station1);
   })
   .catch(error => console.log({ error }));
 

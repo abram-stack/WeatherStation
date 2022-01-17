@@ -16,4 +16,18 @@ router.get('/:station', (req, res) => {
     .catch(error => res.status(500).send({ error }))
 })
 
+router.get('/:station/:functions', async(req, res) => {
+  const { station, functions } = req.params;
+  try {
+    if (functions == 'mean') {
+      const result = await client.query(`select mean(data) from co2 where station = '${station}'`)
+      res.status(200).send(result)
+    }
+    else
+      res.status(500).send('bad request: function not available')
+  } catch (error) {
+    res.status(500).json({error})
+  }
+});
+
 module.exports = router;
