@@ -9,6 +9,7 @@ const humidStation1 = require('./data/humid_st1');
 const co2Station0 = require('./data/co2_st0');
 const co2Station1 = require('./data/co2_st1');
 const pressStation0 = require('./data/pressure_st0');
+const pressStation1 = require('./data/pressure_st1');
 const tempStation0 = require('./data/temp_st0');
 const tempStation1 = require('./data/temp_st1');
 
@@ -40,8 +41,7 @@ client.getDatabaseNames()
       debug(`running on server ${port}...`);
     });
     // write dummy data  database here:
-    writeCo2(co2Station0);
-    writeCo2(co2Station1);
+ 
   })
   .catch(error => console.log({ error }));
 

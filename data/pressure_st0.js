@@ -1,4 +1,4 @@
-// dummy data for station0 from sensor 201
+// dummy data for station0 from sensor 202
 const _ = require('lodash');
 
 const startTs = 1639263600 * 1000; //12. 12. 2021 00:00

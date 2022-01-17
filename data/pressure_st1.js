@@ -1,4 +1,4 @@
-// dummy data for station0 from sensor 212
+// dummy data for station0 from sensor 202
 const _ = require('lodash');
 
 const startTs = 1639263600 * 1000; //12. 12. 2021 00:00
@@ -8,113 +8,113 @@ module.exports = {
   "rawData": {
     "dataInfo": [
       {
-        "sensor": "212",
-        "station": "0",
-        "units" : "ppm"
+        "sensor": "202",
+        "station": "1",
+        "units" : "hPa"
       }
     ],
     "rawDataObs": [
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
             },
             {
                "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                 "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
                 
             },
             {
                "epoch": new Date(_.random(startTs, endTs)),
-                "data": _.random(400, 1000, true)
+                "data": _.random(1, 1.1, true)
               
     }
   ]}
