@@ -1,25 +1,30 @@
 const client = require('../dbClient');
+const debug = require('debug')('app:dbinsert');
 
 // // function to write to temperature, using dummy data
 const writeDataToInflux = (locationObject) => {
   // we want to insert to db as point, so we loop
-  locationObject.rawtemp.rawTempObs.forEach(tempPoint => {
+  locationObject.rawData.rawDataObs.forEach(dataPoint => {
     // line protocol convention
     client.writePoints([
       {
         measurement: 'temperature',
         tags: {
-          unit: locationObject.rawtemp.tempInfo[0].units, //is a need because, front end need to render unit
-          location: locationObject.rawtemp.tempInfo[0].location //messstationid
+          units: locationObject.rawData.dataInfo[0].units, //is a need because, front end need to render unit
+          sensor: locationObject.rawData.dataInfo[0].sensor,
+          station: locationObject.rawData.dataInfo[0].station//messstationid
           // sensorId eg.201
           // messstation id
           },
-        fields: { temperature: tempPoint.temp },//data,
-        timestamp: tempPoint.epoch
+        fields: { data: dataPoint.data },//data,
+        timestamp: dataPoint.epoch
       }
     ], { database: 'aussenklima', precision: 's' })
+      .then(() => { 
+        debug('Writing to DB: ok');
+      })
       .catch(error => {
-      console.log(`Error saving data into Influx ${error}`)
+      debug(`Error saving data into Influx ${error}`)
     })
   });
 }

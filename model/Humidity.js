@@ -1,6 +1,6 @@
 // Model for measurement : humidity 
 const client = require('../dbClient');
-const debug = require('debug')('app::dbinsert')
+const debug = require('debug')('app:dbinsert')
 
 // // function to write to humidity, using dummy data
 const writeDataToInflux = (locationObject) => {

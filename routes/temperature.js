@@ -8,23 +8,25 @@ router.get('/', (req, res) => {
     .catch(error => res.status(500).json({ error }));
 })
 
-router.get('/:location', (req, res) => {
-  const { location } = req.params;
+router.get('/:station', (req, res) => {
+  const { station } = req.params;
   // we query using InfluxQL here:
-  client.query(`select * from temperature where location = '${location}'`)
+  client.query(`select * from temperature where station = '${station}'`)
     .then(result => res.status(200).json(result))
     .catch(error => res.status(500).json({ error }));
 })
 
-router.get('/:location/:functions', async(req, res) => {
-  const { location, functions } = req.params;
+router.get('/:station/:functions', async(req, res) => {
+  const { station,functions } = req.params;
   try {
-    if (functions == 'mean') { 
-      const result = await client.query(`select mean(temperature) from temperature where location = '${location}'`);
+    if (functions == 'mean') {
+      const result = await client.query(`select mean(data) from temperature where station = '${station}'`);
       res.status(200).send(result);
     }
-  } catch (error) {
-    res.status(500).json({ error });
+  }
+  catch (error) { 
+    res.status(500).json({error})
   }
 })
+
 module.exports = router;
