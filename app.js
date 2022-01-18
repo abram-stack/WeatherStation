@@ -2,6 +2,7 @@ const express = require('express');
 const client = require('./dbClient');
 const debug = require('debug')('app:start');
 
+// temporary dummy data
 const locA = require('./data/temp_locA');
 const locB = require('./data/temp_locB');
 const humidStation0 = require('./data/humid_st0');
@@ -17,6 +18,8 @@ const temperature = require('./routes/temperature');
 const humidity = require('./routes/humidity');
 const co2 = require('./routes/co2');
 const pressure = require('./routes/pressure');
+const stations = require('./routes/station');
+const sensors = require('./routes/sensor');
 
 const { writeTemperature } = require('./model/Temperature');
 const { writeHumidity } = require('./model/Humidity');
@@ -50,3 +53,5 @@ app.use('/api/temperature', temperature);
 app.use('/api/humidity', humidity);
 app.use('/api/co2', co2);
 app.use('/api/pressure', pressure);
+app.use('/api/stations', stations);
+app.use('/api/sensors', sensors);
