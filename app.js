@@ -50,7 +50,7 @@ client.getDatabaseNames()
       debug(`running on server ${port}...`);
     });
     // write dummy data  database here:
-    writeHumidity(humidStation1);
+    writeTemperature(tempStation1);
   })
   .catch(error => console.log({ error }));
 
