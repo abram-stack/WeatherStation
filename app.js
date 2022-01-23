@@ -32,6 +32,12 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET , PUT , POST , DELETE");
+    res.header("Access-Control-Allow-Headers", "Content-Type, x-requested-with");
+    next(); // Important
+})
 
 // getDatabaseNames return a promise
 client.getDatabaseNames()
@@ -44,7 +50,7 @@ client.getDatabaseNames()
       debug(`running on server ${port}...`);
     });
     // write dummy data  database here:
-    writeCo2(co2Station1);
+    // writeCo2(co2Station1);
   })
   .catch(error => console.log({ error }));
 
