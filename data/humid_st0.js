@@ -117,7 +117,7 @@ module.exports = {
                 "data": _.random(75, 99, true)
               
             },{
-               "epoch": new Date(	1642476600000),
+               "epoch": new Date(1642476600000),
                 "data": _.random(75, 99, true)
               
         },{
@@ -128,15 +128,15 @@ module.exports = {
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642478400000),
+               "epoch": new Date(1642478400000),
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642479000000),
+               "epoch": new Date(1642479000000),
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642479600000),
+               "epoch": new Date(1642479600000),
                 "data": _.random(75, 99, true)
               
         },{
@@ -172,11 +172,11 @@ module.exports = {
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642485000000),
+               "epoch": new Date(1642485000000),
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642485600000),
+               "epoch": new Date(1642485600000),
                 "data": _.random(75, 99, true)
               
         },{
@@ -184,7 +184,7 @@ module.exports = {
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642486800000),
+               "epoch": new Date(1642486800000),
                 "data": _.random(75, 99, true)
               
         },{
@@ -192,7 +192,7 @@ module.exports = {
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642488000000),
+               "epoch": new Date(1642488000000),
                 "data": _.random(75, 99, true)
               
         },{
@@ -200,15 +200,15 @@ module.exports = {
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642489200000), //18.01. at 07.00
+               "epoch": new Date(1642489200000), //18.01. at 07.00
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642489800000),
+               "epoch": new Date(1642489800000),
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642490400000),
+               "epoch": new Date(1642490400000),
                 "data": _.random(75, 99, true)
               
         },{
@@ -224,11 +224,11 @@ module.exports = {
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642492800000),
+               "epoch": new Date(1642492800000),
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642493400000),
+               "epoch": new Date(1642493400000),
                 "data": _.random(75, 99, true)
               
         },{
@@ -236,7 +236,7 @@ module.exports = {
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642494600000),
+               "epoch": new Date(1642494600000),
                 "data": _.random(75, 99, true)
               
         },{
@@ -244,7 +244,7 @@ module.exports = {
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642495800000),
+               "epoch": new Date(1642495800000),
                 "data": _.random(75, 99, true)
               
         },{
@@ -252,7 +252,7 @@ module.exports = {
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(1642497000000000),
+               "epoch": new Date(1642497000000),
                 "data": _.random(75, 99, true)
               
         },{
@@ -337,7 +337,7 @@ module.exports = {
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642510200000),
+               "epoch": new Date(1642510200000),
                 "data": _.random(75, 99, true)
               
         },{
@@ -425,7 +425,7 @@ module.exports = {
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642523400000),
+               "epoch": new Date(1642523400000),
                 "data": _.random(75, 99, true)
               
         },{
@@ -461,7 +461,7 @@ module.exports = {
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642528800000),
+               "epoch": new Date(1642528800000),
                 "data": _.random(75, 99, true)
               
         },{
@@ -505,7 +505,7 @@ module.exports = {
                 "data": _.random(75, 99, true)
               
         },{
-               "epoch": new Date(	1642535400000),
+               "epoch": new Date(1642535400000),
                 "data": _.random(75, 99, true)
               
         },{

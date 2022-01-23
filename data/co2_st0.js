@@ -252,7 +252,7 @@ module.exports = {
                 "data": _.random(410, 430, true)
               
         },{
-               "epoch": new Date(1642497000000000),
+               "epoch": new Date(1642497000000),
                 "data": _.random(410, 430, true)
               
         },{
