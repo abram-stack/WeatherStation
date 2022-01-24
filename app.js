@@ -13,6 +13,8 @@ const pressStation0 = require('./data/pressure_st0');
 const pressStation1 = require('./data/pressure_st1');
 const tempStation0 = require('./data/temp_st0');
 const tempStation1 = require('./data/temp_st1');
+const particulateMatterStation0 = require('./data/pm_st0');
+const particulateMatterStation1 = require('./data/pm_st1');
 
 const temperature = require('./routes/temperature');
 const humidity = require('./routes/humidity');
@@ -20,11 +22,13 @@ const co2 = require('./routes/co2');
 const pressure = require('./routes/pressure');
 const stations = require('./routes/station');
 const sensors = require('./routes/sensor');
+const particulateMatter = require('./routes/particulateMatter');
 
 const { writeTemperature } = require('./model/Temperature');
 const { writeHumidity } = require('./model/Humidity');
 const { writeCo2 } = require('./model/Co2');
 const { writePressure } = require('./model/Pressure');
+const { writePm } = require('./model/ParticulateMatter');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -32,6 +36,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// CORS proxy
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "GET , PUT , POST , DELETE");
@@ -50,7 +55,7 @@ client.getDatabaseNames()
       debug(`running on server ${port}...`);
     });
     // write dummy data  database here:
-    writeTemperature(tempStation1);
+    writePm(particulateMatterStation1);
   })
   .catch(error => console.log({ error }));
 
@@ -59,5 +64,6 @@ app.use('/api/temperature', temperature);
 app.use('/api/humidity', humidity);
 app.use('/api/co2', co2);
 app.use('/api/pressure', pressure);
+app.use('/api/particulatematter', particulateMatter);
 app.use('/api/stations', stations);
 app.use('/api/sensors', sensors);
