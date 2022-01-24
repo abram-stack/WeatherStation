@@ -15,6 +15,8 @@ const tempStation0 = require('./data/temp_st0');
 const tempStation1 = require('./data/temp_st1');
 const particulateMatterStation0 = require('./data/pm_st0');
 const particulateMatterStation1 = require('./data/pm_st1');
+const brStation0 = require('./data/brightness_st0');
+const brStation1 = require('./data/brightness_st1');
 
 const temperature = require('./routes/temperature');
 const humidity = require('./routes/humidity');
@@ -23,12 +25,14 @@ const pressure = require('./routes/pressure');
 const stations = require('./routes/station');
 const sensors = require('./routes/sensor');
 const particulateMatter = require('./routes/particulateMatter');
+const brightness = require('./routes/brightness');
 
 const { writeTemperature } = require('./model/Temperature');
 const { writeHumidity } = require('./model/Humidity');
 const { writeCo2 } = require('./model/Co2');
 const { writePressure } = require('./model/Pressure');
 const { writePm } = require('./model/ParticulateMatter');
+const { writeBrightness} = require('./model/Brightness');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -55,7 +59,7 @@ client.getDatabaseNames()
       debug(`running on server ${port}...`);
     });
     // write dummy data  database here:
-    writePm(particulateMatterStation1);
+    writeBrightness(brStation1);
   })
   .catch(error => console.log({ error }));
 
@@ -65,5 +69,6 @@ app.use('/api/humidity', humidity);
 app.use('/api/co2', co2);
 app.use('/api/pressure', pressure);
 app.use('/api/particulatematter', particulateMatter);
+app.use('/api/brightness', brightness);
 app.use('/api/stations', stations);
 app.use('/api/sensors', sensors);
