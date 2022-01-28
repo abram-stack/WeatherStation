@@ -40,7 +40,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// CORS proxy
+//CORS proxy
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "GET , PUT , POST , DELETE");
@@ -59,7 +59,7 @@ client.getDatabaseNames()
       debug(`running on server ${port}...`);
     });
     // write dummy data  database here:
-    writeBrightness(brStation1);
+
   })
   .catch(error => console.log({ error }));
 
