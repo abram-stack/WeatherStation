@@ -6,7 +6,6 @@ const writeDataToInflux = (locationObject) => {
     client.writePoints([{
       measurement: 'pressure',
       tags: {
-        units: locationObject.rawData.dataInfo[0].units,
         sensor: locationObject.rawData.dataInfo[0].sensor,
         station: locationObject.rawData.dataInfo[0].station
       },

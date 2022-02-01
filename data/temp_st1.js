@@ -9,8 +9,7 @@ module.exports = {
     "dataInfo": [
       {
         "sensor": "206",
-        "station": "1",
-        "units" : "°C"
+        "station": "1"
       }
     ],
     "rawDataObs": [

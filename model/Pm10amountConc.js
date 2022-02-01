@@ -9,7 +9,7 @@ const writeDataToInflux = (locationObject) => {
     // line protocol convention
     client.writePoints([
       {
-        measurement: 'humidity',
+        measurement: 'pm10amountConc',
         tags: {
           sensor: locationObject.rawData.dataInfo[0].sensor, // sensorId eg.201
           station: locationObject.rawData.dataInfo[0].station //messstationid
@@ -25,4 +25,4 @@ const writeDataToInflux = (locationObject) => {
   });
 }
 
-module.exports.writeHumidity = writeDataToInflux;
+module.exports.writePm10amountConc = writeDataToInflux;

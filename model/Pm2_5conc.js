@@ -9,9 +9,8 @@ const writeDataToInflux = (locationObject) => {
     // line protocol convention
     client.writePoints([
       {
-        measurement: 'particulateMatter',
+        measurement: 'pm2_5conc',
         tags: {
-          units: locationObject.rawData.dataInfo[0].units, //talked to frontend dev, units is needed to render to client
           sensor: locationObject.rawData.dataInfo[0].sensor, // sensorId eg.201
           station: locationObject.rawData.dataInfo[0].station //messstationid
         },
@@ -26,4 +25,4 @@ const writeDataToInflux = (locationObject) => {
   });
 }
 
-module.exports.writePm = writeDataToInflux;
+module.exports.writePm2_5conc = writeDataToInflux;

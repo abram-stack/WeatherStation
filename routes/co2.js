@@ -4,7 +4,7 @@ const client = require('../dbClient');
 
 router.get('/', (req, res) => {
   client.query(`select * from co2`)
-    .then(result => res.status(200).send(result))
+    .then(result => res.status(200).send({'name':'CO2','unit':'ppm','dataArray':result}))
     .catch(error => res.status(500).send({ error }))
   
 });
@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 router.get('/:station', (req, res) => {
   const { station } = req.params;
   client.query(`select * from co2 where station = '${station}'`)
-    .then(result => res.status(200).send(result))
+    .then(result => res.status(200).send({'name':'CO2','unit':'ppm','dataArray':result}))
     .catch(error => res.status(500).send({ error }))
 })
 
@@ -21,7 +21,7 @@ router.get('/:station/:functions', async(req, res) => {
   try {
     if (functions == 'mean') {
       const result = await client.query(`select mean(data) from co2 where station = '${station}'`)
-      res.status(200).send(result)
+      res.status(200).send({'name':'CO2','unit':'ppm','dataArray':result})
     }
     else
       res.status(500).send('bad request: function not available')

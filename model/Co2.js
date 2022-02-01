@@ -11,7 +11,6 @@ const writeDataToInflux = (locationObject) => {
       {
         measurement: 'co2',
         tags: {
-          units: locationObject.rawData.dataInfo[0].units, //talked to frontend dev, units is needed to render to client
           sensor: locationObject.rawData.dataInfo[0].sensor, // sensorId eg.201
           station: locationObject.rawData.dataInfo[0].station //messstationid
         },
