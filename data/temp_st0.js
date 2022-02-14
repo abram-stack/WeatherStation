@@ -8,7 +8,7 @@ module.exports = {
   "rawData": {
     "dataInfo": [
       {
-        "sensor": "206",
+        "sensor": "201",
         "station": "0"
       }
     ],

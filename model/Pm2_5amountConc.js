@@ -24,5 +24,22 @@ const writeDataToInflux = (locationObject) => {
     })
   });
 }
+const getpm25amountConc = async() => { 
+  const result = await client.query(`select * from pm2_5amountConc`);
+  return result;
+}
+
+const getpm25amountConcByStation = async (station) => { 
+  const result = await client.query(`select * from pm2_5amountConc where station = '${station}'`)
+  return result;
+}
+
+const getpm25amountConcMean = async (station) => {
+  const result = await client.query(`select mean(data) from pm2_5amountConc where station = '${station}'`)
+  return result;
+}
 
 module.exports.writePm2_5amountConc = writeDataToInflux;
+module.exports.getpm25amountConc = getpm25amountConc;
+module.exports.getpm25amountConcByStation = getpm25amountConcByStation ;
+module.exports.getpm25amountConcMean = getpm25amountConcMean ;

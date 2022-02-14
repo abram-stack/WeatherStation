@@ -26,5 +26,22 @@ const writeDataToInflux = (locationObject) => {
     })
   });
 }
+const getCo2 = async() => { 
+  const result = await client.query(`select * from co2`);
+  return result;
+}
 
-module.exports.writeCo2 = writeDataToInflux;
+const getCo2ByStation = async (station) => { 
+  const result = await client.query(`select * from co2 where station = '${station}'`)
+  return result;
+}
+
+const getCo2Mean = async (station) => {
+  const result = await client.query(`select mean(data) from co2 where station = '${station}'`)
+  return result;
+  module.exports.writeCo2 = writeDataToInflux;
+}
+module.exports.writeDataToInflux = writeDataToInflux;
+module.exports.getCo2 = getCo2;
+module.exports.getCo2ByStation = getCo2ByStation;
+module.exports.getCo2Mean= getCo2Mean ;

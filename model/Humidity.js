@@ -24,5 +24,22 @@ const writeDataToInflux = (locationObject) => {
     })
   });
 }
+const getHumidity = async() => { 
+  const result = await client.query(`select * from humidity`);
+  return result;
+}
+
+const getHumidityByStation = async (station) => { 
+  const result = await client.query(`select * from humidity where station = '${station}'`)
+  return result;
+}
+
+const getHumidityMean = async (station) => {
+  const result = await client.query(`select mean(data) from humidity where station = '${station}'`)
+  return result;
+}
 
 module.exports.writeHumidity = writeDataToInflux;
+module.exports.getHumidity = getHumidity ;
+module.exports.getHumidityByStation = getHumidityByStation;
+module.exports.getHumidityMean = getHumidityMean;

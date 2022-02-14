@@ -2,29 +2,9 @@ const express = require('express');
 const client = require('./dbClient');
 const debug = require('debug')('app:start');
 
-// temporary dummy data
-const humidStation0 = require('./data/humid_st0');
-const humidStation1 = require('./data/humid_st1');  
-const co2Station0 = require('./data/co2_st0');
-const co2Station1 = require('./data/co2_st1');
-const pressStation0 = require('./data/pressure_st0');
-const pressStation1 = require('./data/pressure_st1');
-const tempStation0 = require('./data/temp_st0');
-const tempStation1 = require('./data/temp_st1');
-// feinstaub
-const pm2_5concStation0 = require('./data/pm2_5conc_st0');
-const pm10concStation0 = require('./data/pm10conc_st0');
-const pm2_5amountConcStation0 = require('./data/pm2_5amountConc_st0');
-const pm10amountConcStation0 = require('./data/pm10amountConc_st0');
+// place temporary dummy data here:
 
-const pm2_5concStation1 = require('./data/pm2_5conc_st1');
-const pm2_5amountConcStation1 = require('./data/pm2_5amountConc_st1');
-const pm10concStation1 = require('./data/pm10conc_st1');
-const pm10amountConcStation1 = require('./data/pm10amountConc_st1');
-
-const brStation0 = require('./data/brightness_st0');
-const brStation1 = require('./data/brightness_st1');
-
+// Routes
 const temperature = require('./routes/temperature');
 const humidity = require('./routes/humidity');
 const co2 = require('./routes/co2');
@@ -37,16 +17,16 @@ const pm2_5amountConc = require('./routes/pm2_5amountConc');
 const pm10amountConc = require('./routes/pm10amountConc');
 const brightness = require('./routes/brightness');
 
-const { writeTemperature } = require('./model/Temperature');
-const { writeHumidity } = require('./model/Humidity');
-const { writeCo2 } = require('./model/Co2');
-const { writePressure } = require('./model/Pressure');
-const { writePm2_5conc } = require('./model/Pm2_5conc');
-const { writePm10conc } = require('./model/Pm10conc');
-const { writePm10amountConc } = require('./model/Pm10amountConc');
-const { writePm2_5amountConc } = require('./model/Pm2_5amountConc');
-
-const { writeBrightness} = require('./model/Brightness');
+// Models
+const temperatureModel = require('./model/Temperature');
+const humidityModel = require('./model/Humidity');
+const co2Model = require('./model/Co2');
+const pressureModel = require('./model/Pressure');
+const pm2_5concModel = require('./model/Pm2_5conc');
+const Pm10concModel = require('./model/Pm10conc');
+const pm10amountConcModel = require('./model/Pm10amountConc');
+const pm2_5amountConcModel = require('./model/Pm2_5amountConc');
+const brightnessModel = require('./model/Brightness');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -73,6 +53,7 @@ client.getDatabaseNames()
       console.log(`running on server ${port}...`);
     });
     // write dummy data  database here:
+    //eg: temperatureModel.writeTemperature(tempStation1);
   })
   .catch(error => console.log({ error }));
 
@@ -85,6 +66,6 @@ app.use('/api/pm2_5conc', pm2_5conc);
 app.use('/api/pm10conc', pm10conc);
 app.use('/api/pm2_5amountConc', pm2_5amountConc);
 app.use('/api/pm10amountConc', pm10amountConc);
-app.use('/api/brightness', brightness);
+app.use('/api/bright', brightness);
 app.use('/api/stations', stations);
 app.use('/api/sensors', sensors);

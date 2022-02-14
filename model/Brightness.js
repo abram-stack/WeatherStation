@@ -27,5 +27,22 @@ const writeDataToInflux = (locationObject) => {
     })
   });
 }
+const getBrightness = async() => { 
+  const result = await client.query(`select * from brightness`);
+  return result;
+}
+
+const getBrightnessByStation = async (station) => { 
+  const result = await client.query(`select * from brightness where station = '${station}'`)
+  return result;
+}
+
+const getBrightnessMean = async (station) => {
+  const result = await client.query(`select mean(data) from brightness where station = '${station}'`)
+  return result;
+}
 
 module.exports.writeBrightness = writeDataToInflux;
+module.exports.getBrightness = getBrightness;
+module.exports.getBrightnessByStation = getBrightnessByStation;
+module.exports.getBrightnessMean= getBrightnessMean;

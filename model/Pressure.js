@@ -20,4 +20,23 @@ const writeDataToInflux = (locationObject) => {
   });
 }
 
+const getPressure = async() => { 
+  const result = await client.query(`select * from pressure`);
+  return result;
+}
+
+const getPressureByStation = async (station) => { 
+  const result = await client.query(`select * from pressure where station = '${station}'`)
+  return result;
+}
+
+const getPressureMean = async (station) => {
+  const result = await client.query(`select mean(data) from pressure where station = '${station}'`)
+  return result;
+}
+
 module.exports.writePressure = writeDataToInflux;
+module.exports.getPressure = getPressure;
+module.exports.getPressureByStation = getPressureByStation;
+module.exports.getPressureMean = getPressureMean;
+

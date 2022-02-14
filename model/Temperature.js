@@ -27,4 +27,21 @@ const writeDataToInflux = (locationObject) => {
     })
   });
 }
+const getTemp = async() => { 
+  const result = await client.query(`select * from temperature`);
+  return result;
+}
+
+const getTempByStation = async (station) => { 
+  const result = await client.query(`select * from temperature where station = '${station}'`)
+  return result;
+}
+
+const getTempMean = async (station) => {
+  const result = await client.query(`select mean(data) from temperature where station = '${station}'`)
+  return result;
+}
 module.exports.writeTemperature = writeDataToInflux;
+module.exports.getTemp = getTemp;
+module.exports.getTempByStation = getTempByStation;
+module.exports.getTempMean = getTempMean;
